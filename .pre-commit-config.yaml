@@ -1,0 +1,41 @@
+fail_fast: false
+repos:
+-   repo: local
+    hooks:
+    - id: system
+      name: Black
+      entry: poetry run black .
+      pass_filenames: false
+      language: system
+
+-   repo: local
+    hooks:
+    - id: system
+      name: ruff
+      entry: poetry run ruff src
+      pass_filenames: false
+      language: system
+
+-   repo: local
+    hooks:
+      - id: system
+        name: isort
+        entry: poetry run isort .
+        pass_filenames: false
+        language: system
+
+-   repo: local
+    hooks:
+    - id: system
+      name: pylint
+      entry: poetry run pylint -d W1203,W1309 src
+      pass_filenames: false
+      language: system
+
+-   repo: local
+    hooks:
+    - id: system
+      name: mypy
+      entry: poetry run mypy --ignore-missing-imports src
+      pass_filenames: false
+      language: system

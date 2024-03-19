@@ -1,0 +1,29 @@
+[tool.pylint.MESSAGE_CONTROL]
+disable=
+    no-else-return,
+    no-name-in-module,
+    too-few-public-methods,
+    line-too-long,
+    duplicate-code,
+    import-error,
+    unused-argument,
+    import-outside-toplevel,
+    too-many-instance-attributes,
+    no-member,
+    W0511,
+    R0914,
+    R0913,
+    C0114,
+    C0111,
+    C0103,
+    R0904,
+    wrong-import-position
+
+[tool.pylint.REPORTS]
+reports=no
+
+[tool.pylint.FORMAT]
+max-line-length=79
+
+[tool.pylint.MASTER]
+extension-pkg-whitelist=pydantic
