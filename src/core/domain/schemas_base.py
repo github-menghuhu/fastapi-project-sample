@@ -13,7 +13,7 @@ class CommonResponse(BaseModel, Generic[T]):
 
     code: int
     message: str | None = None
-    data: T
+    data: T = {}  # type: ignore
 
 
 class Pagination(BaseModel, Generic[T]):

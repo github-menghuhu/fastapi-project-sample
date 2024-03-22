@@ -1,6 +1,15 @@
 import os
 
-from .loc_env import *
+# 全局配置环境
+ENV = os.getenv("ENV")
+
+if ENV == "prod":
+    FAST_API_DOCS_URL = None
+    FAST_API_REDOC_URL = None
+else:
+    FAST_API_DOCS_URL = "/docs"
+    FAST_API_REDOC_URL = "/redoc"
+
 # 项目根目录
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
@@ -30,9 +39,15 @@ REDIS_PORT = os.getenv("REDIS_PORT")
 REDIS_USER = os.getenv("REDIS_USER")
 REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
 
+# authing
+AUTHING_APP_ID = os.getenv("AUTHING_APP_ID")
+AUTHING_APP_SECRET = os.getenv("AUTHING_APP_SECRET")
+AUTHING_APP_HOST = os.getenv("AUTHING_APP_HOST")
+AUTHING_REDIRECT_URL = os.getenv("AUTHING_REDIRECT_URL")
+
 # celery
-CELERY_BROKER_DB = 15
-CELERY_RESULT_DB = 14
+CELERY_BROKER_DB = 0
+CELERY_RESULT_DB = 1
 CELERY_RESULT_EXPIRES = 60 * 60 * 24 * 7
 
 # 其他媒体文件暂存根路由

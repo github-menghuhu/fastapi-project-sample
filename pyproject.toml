@@ -6,7 +6,7 @@ authors = ["menghuhu"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.12.1"
+python = "^3.12"
 fastapi = "0.110.0"
 uvicorn = "0.27.1"
 sqlalchemy = "2.0.28"
@@ -20,6 +20,10 @@ ruff = "^0.3.3"
 mypy = "^1.9.0"
 pylint = "^3.1.0"
 isort = "^5.13.2"
+celery = {extras = ["redis"], version = "^5.3.6"}
+authing = "^5.1.0"
+websockets = "^12.0"
+email-validator = "^2.1.1"
 
 
 [build-system]

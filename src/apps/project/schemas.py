@@ -28,5 +28,18 @@ class CreateProject(ProjectBase):
     pass
 
 
+class QueryProject(ProjectBase):
+    pass
+
+
 class QueryProjectList(ProjectBase):
     pass
+
+
+class AsyncTask(BaseModel):
+    task_id: UUID
+
+
+class AsyncTaskStatus(BaseModel):
+    task_id: UUID
+    is_ready: bool
